@@ -1,17 +1,14 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import style from "./NavBar.module.css";
-import { searchRecipes, getRecipes } from '../../redux/Actions';
 import { connect } from 'react-redux';
+// import { searchRecipes, getRecipes } from '../../redux/Actions';
 // import Recipe from '../../components/recipe/Recipe'
 
 
 const NavBar = (props) => {
   const [recipe, setRecipes] = useState('');
-  // useEffect(() => {
-  //   getRecipes()
-  //   getDiets();
-  // }, [getRecipes, getDiets])
+  
 
   function handleChange(event) {
     setRecipes(event.target.value)
@@ -19,16 +16,16 @@ const NavBar = (props) => {
 
   function handleSubmit(e) {
     e.preventDefault()
-    props.searchRecipes(recipe)
+    // props.searchRecipes(recipe)
     setRecipes('')
   }
 
   return (
      <nav className={style.NavBar}>
-        <div className={style.Links}>
+       <div className={style.Links}>
             <Link to="/home" className={style.link}>Home</Link>
             <Link to="/about" className={style.link}>About</Link>            
-            <Link to="/create" className={style.link}>Create Recipe</Link>         
+            <Link to="/create" className={style.link}>Panel Administracion</Link>         
         </div>
       <div  className={style.form}> 
       <form onSubmit={(e) => { handleSubmit(e) }}>
@@ -44,21 +41,21 @@ const NavBar = (props) => {
 }
 
 
-function mapStateToProps(state) {
-  return {
-    recipes: state.searchedRecipes,
-    allrecipes: state.allRecipes,
-    alldiets: state.allDiets
-  }
-}
+// function mapStateToProps(state) {
+//   return {
+//     // recipes: state.searchedRecipes,
+//     // allrecipes: state.allRecipes,
+//     // alldiets: state.allDiets
+//   }
+// }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    searchRecipes: (recipe) => dispatch(searchRecipes(recipe)),
-    getRecipes: (recipe) => dispatch(getRecipes(recipe)),
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     // searchRecipes: (recipe) => dispatch(searchRecipes(recipe)),
+//     // getRecipes: (recipe) => dispatch(getRecipes(recipe)),
 
-  }
-}
+//   }
+// }
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
+export default NavBar;
+// export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
