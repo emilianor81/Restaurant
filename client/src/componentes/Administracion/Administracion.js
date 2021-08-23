@@ -8,15 +8,15 @@ function Create(props) {
   // const [errors, setErrors] = useState({});
   const [form, setForm] = useState({
     title: '',
-    summary: '',
-    spoonacularScore: 0,
-    healthScore: 0,
-    instructions: '',
-    diets: []
+    city: '',
+    description: '',
+    adress: '',
+    picture: '',
   })
 
   function handleSubmit(e) {
     e.preventDefault();
+    console.log(form)
     props.addRestaurant(form);
     // props.getRestaurants();
     alert('Recipe Created Successfully');
@@ -38,15 +38,18 @@ function Create(props) {
           <label className='LabelTitle'>Nombre:</label>
           <input type='text' name='title' onChange={handleInputChange} />
           <label className='LabelTitle'>Descripción:</label>
-          <input type='number' min='0' max='100' name='spoonacularScore' onChange={(e) => setForm({ ...form, spoonacularScore: e.target.value })} />
+          <input type='text' name='description' onChange={handleInputChange} />
+          <label className='LabelTitle'>direccion:</label>
+          <input type='text' name='adress' onChange={handleInputChange} />
+          {/* <input type='text' name='adress' onChange={(e) => setForm({ ...form, adress: e.target.value })} /> */}
           {/* <label className='LabelTitle'>Dirección:</label> */}
-          <input type='number' min='0' max='100' name='healthScore'
-            onChange={(e) => setForm({ ...form, healthScore: e.target.value })} />
+          {/* <input type='number' min='0' max='100' name='healthScore'
+            onChange={(e) => setForm({ ...form, healthScore: e.target.value })} /> */}
           <label className='LabelTitle'>Ciudad:</label>
-          <textarea name='summary' onChange={handleInputChange} />
+          <textarea name='city' onChange={handleInputChange} />
 
           <label className='LabelTitle'>Foto:</label>
-          <textarea name='instructions' onChange={(e) => setForm({ ...form, instructions: e.target.value })} />
+          <textarea name='picture' onChange={(e) => setForm({ ...form, picture: e.target.value })} />
         </div>
         <div className='DietsAndSubmitButton'>
           {/* <label className='LabelTitle'> Diets: </label>
