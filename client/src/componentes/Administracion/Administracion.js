@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './create.css';
+// import './create.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addRecipe, getRecipes } from '../../redux/Actions';
+import { addRestaurant, getRestaurants } from '../../redux/Actions';
 
 function Create(props) {
   // const [errors, setErrors] = useState({});
@@ -17,8 +17,8 @@ function Create(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.addRecipe(form);
-    props.getRecipes();
+    props.addRestaurant(form);
+    // props.getRestaurants();
     alert('Recipe Created Successfully');
   }
 
@@ -54,7 +54,7 @@ function Create(props) {
             onChange={(e) => setForm({ ...form, diets: [...form.diets, e.target.value] })}
           />{d.name}</label>)} */}
           <button className='CreateSubmitButton' type='submit'>Submit</button>
-          <button className='CreateSubmitButton' type='submit'>Submit2222</button>
+          {/* <button className='CreateSubmitButton' type='submit'>Submit2222</button> */}
 
                   </div>
       </form> 
@@ -73,8 +73,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    addRecipe: info => dispatch(addRecipe(info)),
-    getRecipes: () => dispatch(getRecipes())
+    addRestaurant: info => dispatch(addRestaurant(info)),
+    // getRestaurants: () => dispatch(getRestaurants())
   }
 }
 
