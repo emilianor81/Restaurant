@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export function getRestaurants() {
   return function (dispatch) {
-    axios.get('http://localhost:3001/restaurants')
+    axios.get('http://localhost:3001/restaurant')
       .then(res => dispatch({
         type: 'ALL_RESTAURANTS',
         payload: res.data
