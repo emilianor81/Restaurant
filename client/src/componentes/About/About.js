@@ -16,7 +16,7 @@ export default function Information() {
       <p>Every card has a "reservar" button that will show you a new page 
      where you can make a new reservation for the restaurant.</p>
       </div>
-      <p id='santi'>Emiliano Rodriguez and Santiago Soares Gache basic project<a target='blank' href="https://www.linkedin.com/in/ing-emiliano-rodriguez/">Emiliano </a><p> </p><a target='blank' href="https://www.linkedin.com/in/santiago-soares-gache/">Santiago</a></p>
+      <p id='santi'> <a target='blank' className='Link' href="https://www.linkedin.com/in/ing-emiliano-rodriguez/">Emiliano Rodriguez </a> and <a target='blank' className='Link' href="https://www.linkedin.com/in/santiago-soares-gache/">Santiago Soares Gache</a> project</p>
     </div></div>
   )
 }
