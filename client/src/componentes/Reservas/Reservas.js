@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
+import NavBar from "../Navbar/Navbar";
 
 export default function Reservas({ match }) {
+  const history = useHistory()
   // const dispatch = useDispatch();
 
 
@@ -32,7 +35,9 @@ export default function Reservas({ match }) {
   // } else {
     return (
       <div>
+        <NavBar/>
         <p>HOLA MUNDO!</p>
+        <button className='Button' onClick={()=>history.push('/home')}>Back to Home</button>
         {/* <StyledDiv>
           <section className='container-fluid mt-5' >
             <div className='row' style={{margin: '0% 10% 0% 2%'}}>
