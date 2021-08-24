@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addRestaurant, getRestaurants } from '../../redux/Actions';
+import NavBar from '../Navbar/Navbar';
 
 function Create(props) {
   // const [errors, setErrors] = useState({});
@@ -32,6 +33,7 @@ function Create(props) {
 
    return (
     <div className='NewR'>
+      <NavBar/>
       
       <form className='RecipeForm' onSubmit={(e) => handleSubmit(e)}>
         <div className='CreateForm'>
