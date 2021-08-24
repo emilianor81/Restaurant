@@ -4,13 +4,16 @@ import { Route} from 'react-router-dom'
 import Navbar from './componentes/Navbar/Navbar';
 import Administracion from './componentes/Administracion/Administracion';
 import Home from './componentes/Home/Home';
+import Reservas from './componentes/Reservas/Reservas';
+import About from './componentes/About/About'
 
 function App() {
   return (
     <>
     <Route path="/home" component={Home}/>
-    <Route path="/about" />
+    <Route path="/about" component={About} />
     <Route path="/create" component= {Administracion} />
+    <Route component={Reservas} exact path='/reservas/:id'/>
    
     
     </>
