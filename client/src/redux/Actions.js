@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export function getRestaurants() {
   return function (dispatch) {
-    axios.get('http://localhost:3001/restaurants')
+    axios.get('http://localhost:3001/restaurant')
       .then(res => dispatch({
         type: 'ALL_RESTAURANTS',
         payload: res.data
@@ -35,70 +35,71 @@ export function searchRestaurant(restaurant) {
 };
 
 
-export function addRestaurant({ nombre, descripcion, direccion, ciudad, foto }) {
+export function addRestaurant(Restaurant) {
   return function (dispatch) {
-    const Restaurant = { nombre, descripcion, direccion, ciudad, foto };
+    console.log(Restaurant, 'paaa')
     axios.post(`http://localhost:3001/restaurant`, Restaurant)
-      .then(res => dispatch({
-        type: 'ADD_RESTAURANT',
-        payload: res.data
-      })
-      ).catch(err => {
+    // .then(res => dispatch({
+    //     type: 'ADD_RESTAURANT',
+    //     payload: res.data
+    //   })
+      // )
+      .catch(err => {
         console.error(err)
       });
   }
 }
 
-export function deleteRestaurant(id) {
-  return (dispatch) => {
-    axios.delete(`http://localhost:3001/restaurant/${id}`)
-    .then(response => {
-       dispatch({
-        type: DELETE_RESTAURANT,
-        payload: id
-      })
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-}
-}
+// export function deleteRestaurant(id) {
+//   return (dispatch) => {
+//     axios.delete(`http://localhost:3001/restaurant/${id}`)
+//     .then(response => {
+//        dispatch({
+//         type: DELETE_RESTAURANT,
+//         payload: id
+//       })
+//     })
+//     .catch((err) => {
+//       console.log(err)
+//     })
+// }
+// }
 
-UPDATE_RESTAURANT
-export async function editRestaurant(id, payload) {
-  // console.log('entra aca')
-  await axios.put("http://localhost:3001/admin/productos/" + id, payload)
-    .then((response) => {
-      if (response) alert('El producto se modificó correctamente');
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}
+// UPDATE_RESTAURANT
+// export async function editRestaurant(id, payload) {
+//   // console.log('entra aca')
+//   await axios.put("http://localhost:3001/admin/productos/" + id, payload)
+//     .then((response) => {
+//       if (response) alert('El producto se modificó correctamente');
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// }
 
-export function searchRecipeDetail(recipeId) {
-  return function (dispatch) {
-    axios.get(`http://localhost:3001/recipes/${recipeId}`)
-     .then(res => dispatch({
-        type: 'SEARCH_RECIPE_DETAIL',
-        payload: res.data
-      })
-      ).catch(err => {
-        console.error(err)
-      });
-  };
-};
+// export function searchRecipeDetail(recipeId) {
+//   return function (dispatch) {
+//     axios.get(`http://localhost:3001/recipes/${recipeId}`)
+//      .then(res => dispatch({
+//         type: 'SEARCH_RECIPE_DETAIL',
+//         payload: res.data
+//       })
+//       ).catch(err => {
+//         console.error(err)
+//       });
+//   };
+// };
 
 
-export function getDiets() {
-  return function (dispatch) {
-    axios.get(`http://localhost:3001/types`)
-     .then(res => dispatch({
-        type: 'ALL_DIETS',
-        payload: res.data
-      })
-      ).catch(err => {
-        console.error(err)
-      });
-  };
-};
+// export function getDiets() {
+//   return function (dispatch) {
+//     axios.get(`http://localhost:3001/types`)
+//      .then(res => dispatch({
+//         type: 'ALL_DIETS',
+//         payload: res.data
+//       })
+//       ).catch(err => {
+//         console.error(err)
+//       });
+//   };
+// };

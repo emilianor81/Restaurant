@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
-import './create.css';
+// import './create.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addRecipe, getRecipes } from '../../redux/Actions';
+import { addRestaurant, getRestaurants } from '../../redux/Actions';
+import NavBar from '../Navbar/Navbar';
 
 function Create(props) {
   // const [errors, setErrors] = useState({});
   const [form, setForm] = useState({
     title: '',
-    summary: '',
-    spoonacularScore: 0,
-    healthScore: 0,
-    instructions: '',
-    diets: []
+    city: '',
+    description: '',
+    adress: '',
+    picture: '',
   })
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.addRecipe(form);
-    props.getRecipes();
+    console.log(form)
+    props.addRestaurant(form);
+    // props.getRestaurants();
     alert('Recipe Created Successfully');
   }
 
@@ -32,21 +33,25 @@ function Create(props) {
 
    return (
     <div className='NewR'>
+      <NavBar/>
       
       <form className='RecipeForm' onSubmit={(e) => handleSubmit(e)}>
         <div className='CreateForm'>
           <label className='LabelTitle'>Nombre:</label>
           <input type='text' name='title' onChange={handleInputChange} />
           <label className='LabelTitle'>Descripción:</label>
-          <input type='number' min='0' max='100' name='spoonacularScore' onChange={(e) => setForm({ ...form, spoonacularScore: e.target.value })} />
+          <input type='text' name='description' onChange={handleInputChange} />
+          <label className='LabelTitle'>direccion:</label>
+          <input type='text' name='adress' onChange={handleInputChange} />
+          {/* <input type='text' name='adress' onChange={(e) => setForm({ ...form, adress: e.target.value })} /> */}
           {/* <label className='LabelTitle'>Dirección:</label> */}
-          <input type='number' min='0' max='100' name='healthScore'
-            onChange={(e) => setForm({ ...form, healthScore: e.target.value })} />
+          {/* <input type='number' min='0' max='100' name='healthScore'
+            onChange={(e) => setForm({ ...form, healthScore: e.target.value })} /> */}
           <label className='LabelTitle'>Ciudad:</label>
-          <textarea name='summary' onChange={handleInputChange} />
+          <textarea name='city' onChange={handleInputChange} />
 
           <label className='LabelTitle'>Foto:</label>
-          <textarea name='instructions' onChange={(e) => setForm({ ...form, instructions: e.target.value })} />
+          <textarea name='picture' onChange={(e) => setForm({ ...form, picture: e.target.value })} />
         </div>
         <div className='DietsAndSubmitButton'>
           {/* <label className='LabelTitle'> Diets: </label>
@@ -54,7 +59,7 @@ function Create(props) {
             onChange={(e) => setForm({ ...form, diets: [...form.diets, e.target.value] })}
           />{d.name}</label>)} */}
           <button className='CreateSubmitButton' type='submit'>Submit</button>
-          <button className='CreateSubmitButton' type='submit'>Submit2222</button>
+          {/* <button className='CreateSubmitButton' type='submit'>Submit2222</button> */}
 
                   </div>
       </form> 
@@ -73,8 +78,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    addRecipe: info => dispatch(addRecipe(info)),
-    getRecipes: () => dispatch(getRecipes())
+    addRestaurant: info => dispatch(addRestaurant(info)),
+    // getRestaurants: () => dispatch(getRestaurants())
   }
 }
 
