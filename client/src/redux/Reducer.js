@@ -22,7 +22,7 @@ export default function Reducer(state = initialState, action) {
     case "ADD_RESTAURANT":
       return {
         ...state,
-        addedRecipe: action.payload,
+        addRestaurant: action.payload,
       };
     case "DELETE_RESTAURANT":
       return {
