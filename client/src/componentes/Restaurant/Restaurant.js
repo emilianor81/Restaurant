@@ -61,12 +61,12 @@ export default function Home (props){
            <div>
              <h3 className='RecipeName'>{props.nombre} </h3> 
              <h5>Ciudad : {props.ciudad}</h5>
-             <h6>direccion : {props.direccion}</h6>
-             <h6 className='RecipeInfo'>descripcion : {props.descripcion}</h6>
+             <h6>Direccion : {props.direccion}</h6>
+             <h6 className='RecipeInfo'>Descripcion : {props.descripcion}</h6>
              <img className='Imagen' src={props.foto} alt='url no valida' /> 
              <div className=''>   
               </div>
-              <button onClick={()=>history.push(`/reservas/${props.id}`)}>Resevar mesa</button> 
+              <button className='Button' onClick={()=>history.push(`/reservas/${props.id}`)}>Resevar mesa</button> 
            </div>
       </div>
   )

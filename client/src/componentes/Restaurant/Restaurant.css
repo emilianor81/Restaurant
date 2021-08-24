@@ -15,8 +15,13 @@
     box-shadow: 0.2rem 0.2rem 1rem rgba(20, 20, 20, 0.8);
   }
   .Imagen{
-      object-fit: scale-down;
+      /* object-fit: scale-down;
       width: 16rem;
+      height: 16rem; */
+      height: 12rem;
+      width: 70%;
+      object-fit: cover;
+      margin-bottom: 2rem;
   }
   .RecipeInfo {
     height: 33.3%;
@@ -47,13 +52,17 @@
     background-color: rgba(227, 214, 72, 0.7);
     color: rgb(40, 40, 40)
   }
-  .MoreInfo:hover{
+  .Button{
+      border-radius: 2rem;
+      color:rgba(12, 12, 12, 0.753)
+  }
+  .Button:hover{
     cursor: pointer;
     transform: scale(1.2);
-    border: 0.5px solid rgba(227, 214, 72, 0.7);
+    border: 0.5px solid rgba(6, 38, 107, 0.7);
     background-color: rgba(255, 255, 255, 0.5);
-    color: rgba(40, 40, 40, 0.7);
-    transition: all 0.5s linear;
+    color: rgb(0, 0, 0);
+    transition: all 0.2s linear;
   }
   h3{
     margin-left: 0.2rem;
