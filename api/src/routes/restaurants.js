@@ -21,6 +21,15 @@ const addRestaurant = router.post('/', async (req, res)=>{
 
 
 
-// router.get('/restaurants', )
+router.get('/', async (req, res)=>{
+    try{ console.log('no llega')
+        const get = await Restaurant.findAll();
+        console.log(1, get)
+        res.send(get)
+    }
+    catch(err){
+        res.send(err)
+    }
+} )
 
 module.exports = addRestaurant
