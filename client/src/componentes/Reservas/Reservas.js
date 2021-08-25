@@ -12,6 +12,20 @@ export default function Reservas({ match }) {
   const history = useHistory()
   const [startDate, setStartDate] = useState(new Date());
 
+  const submit = () => {
+    // console.log('hola no disp', JSON.stringify(startDate).split('T')[0], noDisponible[0])
+    let a = noDisponible.filter(e => e.fecha.includes(JSON.stringify(startDate).split('T')[0].slice(1)));
+    console.log(a)
+    if (a) {
+      return alert('fecha no disponible '+a[0].fecha)
+    } else {
+      console.log(1, a);
+      dispatch(addReservation([startDate, match.params.id]));
+      alert('guarde su fecha de reserva ' + JSON.stringify(startDate).split('T')[0].concat('"'));
+      history.push('/')
+    }
+  }
+
   // function onChange(date){
   //   setDate(date);
   // }
@@ -51,7 +65,7 @@ console.log(noDisponible, reservas)
         </div>):null
 
         }
-        <button className='Button' onClick={()=>{let a= noDisponible.find(e=> e.fecha.includes( JSON.stringify(startDate).split('T')[0])); if (a){return console.log('a',a)}dispatch(addReservation([startDate, match.params.id])); alert('guarde su fecha de reserva '+ JSON.stringify(startDate).split('T')[0].concat('"')); history.push('/')}}>Crear reserva</button>       
+        <button className='Button' onClick={submit}>Crear reserva</button>       
         <button className='Button' onClick={()=>history.push('/')}>Back to Home</button>       
       </div>
     );
