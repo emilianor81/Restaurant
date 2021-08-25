@@ -66,7 +66,7 @@ export default function Home (props){
              <img className='Imagen' src={props.foto} alt='url no valida' /> 
              <div className=''>   
               </div>
-              <button className='Button' onClick={()=>history.push(`/reservas/${props.id}`)}>Resevar mesa</button> 
+              <button className='Button' onClick={()=>history.push(`/reservas/${props.id}/${props.nombre}`)}>Resevar mesa</button> 
            </div>
       </div>
   )

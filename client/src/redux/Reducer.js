@@ -2,6 +2,7 @@ const initialState = {
   restaurants: [],
   restaurantSearch: [],
   allTables: [],
+  reservasId:[],
 
   // recipeDetail: {},
   // addedRecipe: {},
@@ -13,6 +14,12 @@ export default function Reducer(state = initialState, action) {
       return {
         ...state,
         restaurants: action.payload,
+      };
+    case "ALL_RESERVATIONS":
+      console.log('reducer', action.payload)
+      return {
+        ...state,
+        reservasId: action.payload,
       };
     case "SEARCH_RESTAURANT":
       return {

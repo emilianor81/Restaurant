@@ -63,7 +63,7 @@ function Create(props) {
 
                   </div>
       </form> 
-      <button className='CreateSubmitButton' ><Link className='Link' to='/home'>Back to Home</Link></button>
+      <button className='CreateSubmitButton' ><Link className='Link' to='/'>Back to Home</Link></button>
 
     </div>
   )

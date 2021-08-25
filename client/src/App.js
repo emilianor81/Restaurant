@@ -10,10 +10,10 @@ import About from './componentes/About/About'
 function App() {
   return (
     <>
-    <Route path="/home" component={Home}/>
-    <Route path="/about" component={About} />
-    <Route path="/create" component= {Administracion} />
-    <Route component={Reservas} exact path='/reservas/:id'/>
+    <Route exact path="/" component={Home}/>
+    <Route exact path="/about" component={About} />
+    <Route exact path="/create" component= {Administracion} />
+    <Route exact component={Reservas} exact path='/reservas/:id/:nombre'/>
    
     
     </>
