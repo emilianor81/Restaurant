@@ -58,7 +58,7 @@ console.log(noDisponible, reservas)
         {noDisponible.length?(<div>
         <h1>Fechas no Disponibles: </h1>
         <ul>
-          {noDisponible.map(e=> e.fecha)}
+          {noDisponible.map(e=> <li>{e.fecha}</li>)}
         </ul>
         </div>):null
 
