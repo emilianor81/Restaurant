@@ -8,13 +8,14 @@ module.exports = (sequelize) => {
     type: DataTypes.INTEGER,
     primaryKey: true,
     unique: true,
-    allowNull: false,
+    // allowNull: false,
+    autoIncrement:true,
   },
-  name: {
-    type: DataTypes.STRING,
+  fecha: {
+    type: DataTypes.DATEONLY,
   },
   disponible: {
-    type: DataTypes.BOOLEAN,
+    type: DataTypes.INTEGER,
   },
 });
 }

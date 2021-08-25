@@ -23,7 +23,7 @@ const NavBar = (props) => {
   return (
      <nav className={style.NavBar}>
        <div className={style.Links}>
-            <Link to="/home" className={style.link}>Home</Link>
+            <Link to="" className={style.link}>Home</Link>
             <Link to="/about" className={style.link}>About</Link>            
             <Link to="/create" className={style.link}>Add Restaurant</Link>         
         </div>

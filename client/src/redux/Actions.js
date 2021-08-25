@@ -13,6 +13,18 @@ export function getRestaurants() {
   };
 };
 
+export function getReservations(payload) {
+  return function (dispatch) {
+    axios.get('http://localhost:3001/reserva?id='+ payload )
+    .then(res => dispatch({
+        type: 'ALL_RESERVATIONS',
+        payload: res.data
+      })
+      ).catch(err => {
+        console.error('error',err)
+      });
+  };
+};
 
 export function searchRestaurant(restaurant) {
   if (restaurant !== '') {
@@ -44,6 +56,15 @@ export function addRestaurant(Restaurant) {
     //     payload: res.data
     //   })
       // )
+      .catch(err => {
+        console.error(err)
+      });
+  }
+}
+
+export function addReservation(payload) {
+  return function (dispatch) {
+    axios.post(`http://localhost:3001/reserva`, payload)
       .catch(err => {
         console.error(err)
       });
